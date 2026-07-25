@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CJK Glyph Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="base-fonts" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>CJK Glyph Comparison</h1>
+  <div class="input-row">
+    <input id="glyph-input" type="text" placeholder="Type characters to compare..." autofocus>
+    <button id="copy-btn" title="Copy link">Copy Link</button>
+  </div>
+  <div class="presets" id="preset-bar"></div>
+</div>
+
+<div class="grid">
+  <div class="column" id="col-sc" data-region="sc">
+    <div class="column-header">
+      <div class="label">Region</div>
+      <div class="region">Simplified Chinese</div>
+      <div class="font-name"></div>
+    </div>
+    <div class="glyph-display"></div>
+  </div>
+  <div class="column" id="col-tc" data-region="tc">
+    <div class="column-header">
+      <div class="label">Region</div>
+      <div class="region">Traditional Chinese</div>
+      <div class="font-name"></div>
+    </div>
+    <div class="glyph-display"></div>
+  </div>
+  <div class="column" id="col-jp" data-region="jp">
+    <div class="column-header">
+      <div class="label">Region</div>
+      <div class="region">Japanese</div>
+      <div class="font-name"></div>
+    </div>
+    <div class="glyph-display"></div>
+  </div>
+  <div class="column" id="col-kr" data-region="kr">
+    <div class="column-header">
+      <div class="label">Region</div>
+      <div class="region">Korean</div>
+      <div class="font-name"></div>
+    </div>
+    <div class="glyph-display"></div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
