@@ -6,6 +6,21 @@ const grid = document.getElementById('grid');
 const input = document.getElementById('glyph-input');
 const presetBar = document.getElementById('preset-bar');
 const copyBtn = document.getElementById('copy-btn');
+const themeToggle = document.getElementById('theme-toggle');
+
+function applyTheme(light) {
+  document.body.classList.toggle('light', light);
+  themeToggle.textContent = light ? '\u263E' : '\u2600';
+  localStorage.setItem('theme', light ? 'light' : 'dark');
+}
+
+const saved = localStorage.getItem('theme');
+const prefersLight = saved ? saved === 'light' : matchMedia('(prefers-color-scheme: light)').matches;
+applyTheme(prefersLight);
+
+themeToggle.addEventListener('click', () => {
+  applyTheme(!document.body.classList.contains('light'));
+});
 
 let activePreset = 'sans';
 
@@ -36,7 +51,9 @@ function syncHash() {
 function readHash() {
   if (location.hash) {
     input.value = decodeURIComponent(location.hash.slice(1));
+    return true;
   }
+  return false;
 }
 
 copyBtn.addEventListener('click', () => {
@@ -110,5 +127,7 @@ input.addEventListener('input', () => {
   render();
 });
 
-readHash();
+const DEFAULT_CHARS = '直骨神平';
+
+readHash() || (input.value = DEFAULT_CHARS);
 applyPreset('sans');
