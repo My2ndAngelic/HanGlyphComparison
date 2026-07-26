@@ -4,7 +4,7 @@ const BASE = 'https://fonts.googleapis.com/css2';
 const WEIGHTS = 'wght@400;700';
 
 export function buildFontUrl(preset) {
-  const families = Object.values(preset.fonts)
+  const families = [...new Set(Object.values(preset.fonts))]
     .map(name => `family=${name.replace(/ /g, '+')}:${WEIGHTS}`)
     .join('&');
   return `${BASE}?${families}&display=swap`;

@@ -1,12 +1,28 @@
 import { PRESETS } from './presets/index.js';
+import { REGIONS } from './regions.js';
 import { loadFont } from './fonts.js';
 
-const columns = document.querySelectorAll('.column');
+const grid = document.getElementById('grid');
 const input = document.getElementById('glyph-input');
 const presetBar = document.getElementById('preset-bar');
 const copyBtn = document.getElementById('copy-btn');
 
 let activePreset = 'sans';
+
+REGIONS.forEach(r => {
+  grid.insertAdjacentHTML('beforeend', `
+    <div class="column" data-region="${r.key}" lang="${r.lang}">
+      <div class="column-header">
+        <div class="label">Region</div>
+        <div class="region">${r.name}</div>
+        <div class="font-name"></div>
+      </div>
+      <div class="glyph-display"></div>
+    </div>
+  `);
+});
+
+const columns = grid.querySelectorAll('.column');
 
 function syncHash() {
   const text = input.value;

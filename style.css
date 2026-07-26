@@ -91,7 +91,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1px;
   background: #222;
   margin: 1.5rem 2rem 2rem;
@@ -137,7 +137,6 @@ body {
   font-size: 2rem;
   line-height: 1.6;
   word-break: break-all;
-  user-select: all;
 }
 
 .empty-state {
@@ -146,6 +145,23 @@ body {
   text-align: center;
   width: 100%;
   padding-top: 4rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 2rem 2rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+footer a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 800px) {
