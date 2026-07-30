@@ -1,7 +1,8 @@
 export const REGIONS = [
-  { key: 'sc', name: 'Simplified Chinese', lang: 'zh-Hans-CN' },
-  { key: 'tc', name: 'Traditional Chinese', lang: 'zh-Hant-TW' },
-  { key: 'hk', name: 'Hong Kong', lang: 'zh-Hant-HK' },
-  { key: 'jp', name: 'Japanese', lang: 'ja-JP' },
-  { key: 'kr', name: 'Korean', lang: 'ko-KR' },
+  { key: 'en', name: 'None' },
+  { key: 'sc', name: 'Simplified Chinese'},
+  { key: 'tc', name: 'Traditional Chinese'},
+  { key: 'hk', name: 'Hong Kong' },
+  { key: 'jp', name: 'Japanese' },
+  { key: 'kr', name: 'Korean',},
 ];

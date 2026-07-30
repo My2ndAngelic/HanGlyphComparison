@@ -26,7 +26,7 @@ let activePreset = 'sans';
 
 REGIONS.forEach(r => {
   grid.insertAdjacentHTML('beforeend', `
-    <div class="column" data-region="${r.key}" lang="${r.lang}">
+    <div class="column" data-region="${r.key}">
       <div class="column-header">
         <div class="label">Region</div>
         <div class="region">${r.name}</div>
